@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Cinematic Styles */
+@layer base {
+body {
+@apply bg-[#050505] m-0 p-0 overflow-hidden;
+}
+}
+
+@layer utilities {
+/* Hides scrollbars while keeping the scrolling functionality */
+.scrollbar-none::-webkit-scrollbar {
+display: none;
+}
+.scrollbar-none {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+/* Smooth snap alignment */
+.snap-x {
+scroll-snap-type: x mandatory;
+}
+.snap-center {
+scroll-snap-align: center;
+}
+}
+
+/* Optional: Smooth fade-in for the whole app */
+#root {
+animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
